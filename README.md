@@ -1,8 +1,8 @@
 # Copago — Estimador Agéntico de Copago y Cobertura
 
-Reto #3 del **hackIAthon Viamatica** — un agente conversacional que ayuda al paciente a entender su beneficio **antes** de atenderse: recibe un síntoma, sugiere la especialidad, cruza datos con el plan de seguro del paciente y le dice exactamente cuánto pagará y qué hospital de la red le conviene más económicamente.
+Reto #3 del hackIAthon Viamatica. Agente conversacional que ayuda al paciente a entender su beneficio antes de atenderse: recibe un síntoma, sugiere la especialidad, cruza datos con el plan de seguro y le dice cuánto pagará y qué hospital de la red le conviene más económicamente.
 
-> Hecho con cariño por **Natalia Mawyin** — porque "te llamamos para confirmar el copago" no debería ser parte del proceso.
+Autora: Natalia Mawyin.
 
 ---
 
@@ -74,5 +74,3 @@ Abrir [http://localhost:3000](http://localhost:3000).
 - Verificación de credenciales del paciente
 - Auditoría de cada cálculo (log inmutable)
 - Manejo de copagos de emergencia vs. ambulatorio vs. hospitalización
-
-— N.

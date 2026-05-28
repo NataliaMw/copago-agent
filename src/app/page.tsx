@@ -44,7 +44,7 @@ export default function Page() {
     <main className="mx-auto max-w-2xl px-4 py-8">
       <header className="mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">Copago<span className="text-accent">.</span></h1>
-        <p className="text-sm text-ink/60 mt-1">Sabe cuánto vas a pagar <em>antes</em> de cruzar la puerta del hospital.</p>
+        <p className="text-sm text-ink/60 mt-1">Estima tu copago y el hospital más conveniente antes de atenderte.</p>
       </header>
 
       <section className="rounded-2xl border border-ink/10 bg-white p-4 mb-4">
@@ -99,7 +99,7 @@ export default function Page() {
       </form>
 
       <footer className="mt-8 text-xs text-ink/40">
-        Construido por Natalia Mawyin · datos sintéticos con fines demostrativos · hackIAthon Viamatica
+        Natalia Mawyin · datos sintéticos con fines demostrativos · hackIAthon Viamatica
       </footer>
     </main>
   );
