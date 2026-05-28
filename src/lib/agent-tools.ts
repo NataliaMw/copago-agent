@@ -55,6 +55,14 @@ function calcCopago(plan: Plan, tarifa: number, deducibleConsumido: number) {
   };
 }
 
+function normalizeEsp(s: unknown): string {
+  return String(s ?? "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 export function executeTool(name: string, input: Record<string, unknown>): unknown {
   if (name === "sugerir_especialidad") {
     const sintoma = String(input.sintoma ?? "").toLowerCase();
@@ -67,8 +75,9 @@ export function executeTool(name: string, input: Record<string, unknown>): unkno
     const plan = PLANES.find(p => p.id === input.planId);
     const hospital = HOSPITALES.find(h => h.id === input.hospitalId);
     if (!plan || !hospital) return { error: "plan u hospital no encontrado" };
-    const tarifa = hospital.tarifas[String(input.especialidad)];
-    if (!tarifa) return { error: `especialidad ${input.especialidad} no disponible en ${hospital.nombre}` };
+    const esp = normalizeEsp(input.especialidad);
+    const tarifa = hospital.tarifas[esp];
+    if (!tarifa) return { error: `especialidad ${esp} no disponible en ${hospital.nombre}` };
     if (hospital.red === "completa" && plan.red === "preferente") {
       return { error: `${hospital.nombre} no está en la red del plan ${plan.nombre}. Sólo cubre red preferente.` };
     }
@@ -76,7 +85,7 @@ export function executeTool(name: string, input: Record<string, unknown>): unkno
       hospital: hospital.nombre,
       ciudad: hospital.ciudad,
       plan: plan.nombre,
-      especialidad: input.especialidad,
+      especialidad: esp,
       ...calcCopago(plan, tarifa, Number(input.deducibleConsumido ?? 0))
     };
   }
@@ -84,7 +93,7 @@ export function executeTool(name: string, input: Record<string, unknown>): unkno
   if (name === "comparar_hospitales") {
     const plan = PLANES.find(p => p.id === input.planId);
     if (!plan) return { error: "plan no encontrado" };
-    const esp = String(input.especialidad);
+    const esp = normalizeEsp(input.especialidad);
     const elegibles = HOSPITALES.filter(h => plan.red === "completa" || h.red === "preferente");
     const opciones = elegibles
       .filter(h => h.tarifas[esp])
