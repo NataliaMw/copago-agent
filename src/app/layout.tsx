@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Copago — estima tu copago antes de atenderte",
-  description: "Agente conversacional que estima tu copago y te recomienda el hospital más conveniente.",
-  authors: [{ name: "Natalia Mawyin" }]
+  description: "Agente conversacional que estima tu copago y te recomienda el hospital más conveniente."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

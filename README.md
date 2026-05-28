@@ -2,8 +2,6 @@
 
 Reto #3 del hackIAthon Viamatica. Agente conversacional que ayuda al paciente a entender su beneficio antes de atenderse: recibe un síntoma, sugiere la especialidad, cruza datos con el plan de seguro y le dice cuánto pagará y qué hospital de la red le conviene más económicamente.
 
-Autora: Natalia Mawyin.
-
 ---
 
 ## Cómo funciona
@@ -58,7 +56,7 @@ Abrir [http://localhost:3000](http://localhost:3000).
 ## Entregables hackIAthon
 
 - **Agente funcional (público)**: _(URL de Vercel)_
-- **Repositorio**: _(URL de GitHub NataliaMw/copago-agent)_
+- **Repositorio**: este repo
 
 ## Decisiones de diseño
 

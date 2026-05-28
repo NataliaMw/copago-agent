@@ -99,7 +99,7 @@ export default function Page() {
       </form>
 
       <footer className="mt-8 text-xs text-ink/40">
-        Natalia Mawyin · datos sintéticos con fines demostrativos · hackIAthon Viamatica
+        Datos sintéticos con fines demostrativos · hackIAthon Viamatica
       </footer>
     </main>
   );
